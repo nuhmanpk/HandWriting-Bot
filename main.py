@@ -26,8 +26,9 @@ async def text(bot, message):
     length = len(text)
     if length < 500:
         txt = await message.reply_text("Converting to handwriting...")
-        rgb = [0, 0, 0]
+        rgb = [0, 0, 0] # Edit RGB values here to change the Ink color
         try:
+            # Can directly use pywhatkit module for this
             data = requests.get(
                 "https://pywhatkit.herokuapp.com/handwriting?text=%s&rgb=%s,%s,%s"
                 % (text, rgb[0], rgb[1], rgb[2])
