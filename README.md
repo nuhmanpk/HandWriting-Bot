@@ -1,11 +1,11 @@
 # HandWriting-Bot
 Telegram Bot to convert text to Handwriting using pywhatkit. 
 
-![GitHub Repo stars](https://img.shields.io/github/stars/TharukRenuja/VCPlayerBot?color=blue&style=flat)
-![GitHub issues](https://img.shields.io/github/issues/TharukRenuja/VCPlayerBot)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/TharukRenuja/VCPlayerBot)
-![GitHub contributors](https://img.shields.io/github/contributors/TharukRenuja/VCPlayerBot?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/TharukRenuja/VCPlayerBot?style=flat)
+![GitHub Repo stars](https://img.shields.io/github/stars/TharukRenuja/HandWriting-Bot?color=blue&style=flat)
+![GitHub issues](https://img.shields.io/github/issues/TharukRenuja/HandWriting-Bot)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/TharukRenuja/HandWriting-Bot)
+![GitHub contributors](https://img.shields.io/github/contributors/TharukRenuja/HandWriting-Bot?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/TharukRenuja/HandWriting-Bot?style=flat)
 
 ## Easy Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TharukRenuja/VCPlayerBot)
