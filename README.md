@@ -14,7 +14,7 @@ Telegram Bot to convert text to Handwriting using pywhatkit.
 
 ```sh
 git clone https://github.com/TharukRenuja/HandWriting-Bot
-cd VCPlayerBot
+cd HandWriting-Bot
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 main.py
