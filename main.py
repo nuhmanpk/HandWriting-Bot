@@ -6,19 +6,58 @@
 
 import pyrogram
 from pyrogram import Client, filters
-from pyrogram.types import User, Message
+from pyrogram.types import User, Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import os
 import requests
 
-bughunter0 = Client(
+HWBot = Client(
     "Handwriting",
     bot_token=os.environ["BOT_TOKEN"],
     api_id=int(os.environ["API_ID"]),
     api_hash=os.environ["API_HASH"],
 )
 
+HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Hand Write In Telegram.\nSend me a text to convert it Handwriting.</b>"
+admin_filter=filters.create(is_admin) 
 
-@bughunter0.on_message(filters.text)
+@HWBot.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
+async def start(client, message):
+    buttons = [
+        [
+            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/SLBotsOfficial'),
+            InlineKeyboardButton('🧩 Support Group', url='https://t.me/trtechguide')
+        ],
+        [
+            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help'),
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply(HOME_TEXT.format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
+
+@HWBot.on_callback_query()
+async def cb_handler(client: Bot, query: CallbackQuery):
+    data = query.data
+    if data == "about":
+        await query.message.edit_text(
+            text = f"<b>○ Creator : <a href='https://t.me/TharukRenuja'>Tharuk Renuja</a>\n○ Source Code : <a href='https://github.com/TharukRenuja/HandWriting-Bot'>Click here</a>\n○ Channel : @SLBotsOfficial\n○ Support Group : @trtechguide</b>",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    ]
+                ]
+            )
+        )
+    elif data == "close":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
+
+
+@HWBot.on_message(filters.text)
 async def text(bot, message):
     text = str(message.text)
     chat_id = int(message.chat.id)
@@ -51,5 +90,5 @@ async def text(bot, message):
         await message.reply_text("Please don't do It")
 
 
-bughunter0.run()
+HWBot.run()
 
