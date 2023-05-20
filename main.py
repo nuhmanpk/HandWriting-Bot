@@ -23,8 +23,7 @@ async def text(bot, message):
     text = str(message.text)
     chat_id = int(message.chat.id)
     file_name = f"{message.chat.id}.jpg"
-    length = len(text)
-    if length < 500:
+    if len(text) < 500:
         txt = await message.reply_text("Converting to handwriting...")
         rgb = [0, 0, 0] # Edit RGB values here to change the Ink color
         try:
@@ -50,6 +49,4 @@ async def text(bot, message):
     else:
         await message.reply_text("Please don't do It")
 
-
 bughunter0.run()
-
