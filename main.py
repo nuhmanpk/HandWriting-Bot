@@ -1,4 +1,4 @@
-
+# https://gist.github.com/nuhmanpk/e2e49a30ea0174dd88fbea3be7eeffd0
 # © BugHunterCodeLabs ™
 # © bughunter0
 # 2021
@@ -28,6 +28,7 @@ async def text(bot, message):
         rgb = [0, 0, 0] # Edit RGB values here to change the Ink color
         try:
             # Can directly use pywhatkit module for this
+            # here is the updated code https://gist.github.com/nuhmanpk/e2e49a30ea0174dd88fbea3be7eeffd0
             data = requests.get(
                 "https://pywhatkit.herokuapp.com/handwriting?text=%s&rgb=%s,%s,%s"
                 % (text, rgb[0], rgb[1], rgb[2])
